@@ -6,3 +6,6 @@ pt_resnet50_imagenet_224_224_8.2G_3.0/data/
 *.tar.gz
 *.tgz
 *.zip
+
+# git remote set-url origin https://github.com/Meatisdelicious/imagenet_predictions_embedded.git
+# git push -u origin main
