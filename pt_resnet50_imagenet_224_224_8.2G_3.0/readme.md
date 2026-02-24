@@ -58,6 +58,41 @@
   sh run_test_quantized.sh
   ```
 
+3. Evaluate with `eval_imagenet.py` (top-1 / top-5 accuracy)
+  - From `pt_resnet50_imagenet_224_224_8.2G_3.0/`:
+  ```shell
+  python code/test/eval_imagenet.py \
+    --model_path float/resnet50_pretrained.pth \
+    --data_dir data/imagenet-val \
+    --split val \
+    --batch_size 32 \
+    --device gpu
+  ```
+
+  - For quantized checkpoint evaluation, use the quantized model path in `--model_path`:
+  ```shell
+  python code/test/eval_imagenet.py \
+    --model_path code/quantization_output/quantized_model.pth \
+    --data_dir data/imagenet-val \
+    --split val \
+    --batch_size 32 \
+    --device gpu
+  ```
+
+### Expected Metrics
+
+For the baseline model, expected ImageNet validation accuracy is:
+
+|Model|input_size|FLOPs|Params|Float top-1/top-5 acc(%)|Quantized top-1/top-5 acc(%)|
+|---|---|---|---|---|---|
+|Baseline|224x224|8.2G|25.56M|76.1/92.9|76.1/92.9|
+
+### Quantized XModel
+
+The INT8 compiled model file is:
+
+`quantized/ResNet_0_int.xmodel`
+
 ### Performance
 
 We evaluate the pytorch float/quantized model accuracy:
