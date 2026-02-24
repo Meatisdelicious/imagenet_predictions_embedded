@@ -24,7 +24,7 @@ from resnet50 import resnet50
 #   --dpu_arch DPUCVDX8G_ISA3_C32B6 \
 #   --inspect_out vitis_ai_inspector_results
 
-# Just run a single inference but in the vitis docker container
+# Just run a single inference but in the vitis docker container. Outputs the class and the expected true class
 # python code/test/inference_vitis.py \
 #   --model_path float/resnet50_pretrained.pth \
 #   --data_dir data/imagenet-val \

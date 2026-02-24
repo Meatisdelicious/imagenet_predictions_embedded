@@ -1,30 +1,3 @@
-# Copyright 2019 Xilinx Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# Command to test the accuracy of the model, on the dataset imgnet of 1000 classes. 
-# it's on the validation dataset
-# run in the pt_resnet50... folder
-# python code/test/eval_imagenet.py \
-#   --model_name resnet50 \
-#   --data_dir data/imagenet-val \
-#   --split val \
-#   --model_path float/resnet50_pretrained.pth \
-#   --batch_size 32 \
-#   --device cpu \
-#   --workers 1
-
-
 import os
 import sys
 import argparse
@@ -38,9 +11,21 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 
+# Command to test the accuracy of the model, on the dataset imgnet of 1000 classes. 
+# it's on the validation dataset
+# run in the pt_resnet50... folder
+# python code/test/eval_imagenet.py \
+#   --model_name resnet50 \
+#   --data_dir data/imagenet-val \
+#   --split val \
+#   --model_path float/resnet50_pretrained.pth \
+#   --batch_size 10 \
+#   --subset_len 200 \
+#   --device gpu \
+#   --workers 1
+
 sys.path.append(str(Path(__file__).resolve().parents[1] / 'models'))
 from resnet50 import resnet50
-
 
 parser = argparse.ArgumentParser()
 

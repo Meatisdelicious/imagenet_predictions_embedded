@@ -10,6 +10,7 @@ from PIL import Image
 sys.path.append(str(Path(__file__).resolve().parents[1] / "models"))
 from resnet50 import resnet50
 
+# Simple inference testing without vitis AI, on the original model
 # Test inference on a class fish
 # python code/test/inference.py \
 #   --model_path float/resnet50_pretrained.pth \
