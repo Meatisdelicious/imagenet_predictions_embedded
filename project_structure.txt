@@ -1,0 +1,41 @@
+.
+├── pt_resnet50_imagenet_224_224_8.2G_3.0
+│   ├── code
+│   │   ├── models
+│   │   │   ├── resnet50_qat_model.py
+│   │   │   └── resnet50.py
+│   │   ├── test
+│   │   │   └── eval_imagenet.py
+│   │   ├── train
+│   │   │   ├── resnet50_qat.py
+│   │   │   └── resnet50_train.py
+│   │   ├── run_test_float.sh
+│   │   ├── run_test_quantized.sh
+│   │   └── util.py
+│   ├── data
+│   │   ├── tiny-imagenet-200
+│   │   │   ├── test
+│   │   │   │   └── images  [10000 entries exceeds filelimit, not opening dir]
+│   │   │   ├── train  [200 entries exceeds filelimit, not opening dir]
+│   │   │   ├── val
+│   │   │   │   ├── images  [10000 entries exceeds filelimit, not opening dir]
+│   │   │   │   └── val_annotations.txt
+│   │   │   ├── wnids.txt
+│   │   │   └── words.txt
+│   │   └── .gitkeep
+│   ├── float
+│   │   ├── resnet50_fp16.onnx
+│   │   ├── resnet50_fp32.onnx
+│   │   └── resnet50_pretrained.pth
+│   ├── quantized
+│   │   ├── deployable.pth
+│   │   ├── quant_info.json
+│   │   ├── ResNet_0_int.xmodel
+│   │   └── ResNet.py
+│   ├── readme.md
+│   ├── requirement_upgraded.txt
+│   ├── requirements_docker.txt
+│   └── requirements.txt
+└── project_structure.txt
+
+15 directories, 24 files

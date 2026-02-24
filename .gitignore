@@ -1,0 +1,8 @@
+# Datasets (ImageNet and local data folders)
+pt_resnet50_imagenet_224_224_8.2G_3.0/data/
+
+# Large dataset archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip
