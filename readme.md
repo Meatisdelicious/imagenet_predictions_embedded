@@ -6,23 +6,48 @@ This repository contains a ResNet50 ImageNet project under:
 
 ## Python Version
 
-Use **Python 3.7** for best compatibility with the original requirements.
+Use **Python 3.12** with `uv` for local development.
 
-## Install Requirements
+Note: some Vitis AI Docker images may pin older Python/tooling. In that case, follow the container's version constraints.
+
+## Setup with `uv` (recommended)
 
 From the repository root:
 
 ```bash
-python3.7 -m venv .venv
+uv venv --python 3.12 .venv
 source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+uv sync
 ```
 
-If you are inside a Vitis AI Docker environment, use:
+This uses:
+
+- `pyproject.toml` for dependency declarations
+- `uv.lock` for fully pinned, reproducible installs
+
+### Update dependencies
 
 ```bash
-pip install -r requirements_docker.txt
+# add or update a runtime dependency
+uv add <package>
+
+# add a dev dependency
+uv add --dev <package>
+
+# refresh lockfile after dependency changes
+uv lock
+
+# sync .venv to the lockfile
+uv sync
+```
+
+## Legacy requirements-based setup
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 ```
 
 ## Dataset Layout
