@@ -68,7 +68,7 @@ def parse_args():
     parser.add_argument("--export_dir", default="quantized", help="Where export_xmodel writes .xmodel.")
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--workers", type=int, default=1)
-    parser.add_argument("--max_calib_samples", type=int, default=128)
+    parser.add_argument("--max_calib_samples", type=int, default=100)
     parser.add_argument("--max_test_samples", type=int, default=0, help="0 means full split.")
     parser.add_argument("--seed", type=int, default=123)
     parser.add_argument("--deploy", action="store_true", help="In test mode: export .xmodel.")
