@@ -8,7 +8,7 @@ This repository contains a ResNet50 ImageNet project under:
 
 Use **Python 3.12** with `uv` for local development.
 
-Note: some Vitis AI Docker images may pin older Python/tooling. In that case, follow the container's version constraints.
+Note: some Vitis AI Docker images is vitis version 3.0 with python 3.7 inside
 
 ## Setup with `uv` (recommended)
 
@@ -24,22 +24,6 @@ This uses:
 
 - `pyproject.toml` for dependency declarations
 - `uv.lock` for fully pinned, reproducible installs
-
-### Update dependencies
-
-```bash
-# add or update a runtime dependency
-uv add <package>
-
-# add a dev dependency
-uv add --dev <package>
-
-# refresh lockfile after dependency changes
-uv lock
-
-# sync .venv to the lockfile
-uv sync
-```
 
 ## Legacy requirements-based setup
 
