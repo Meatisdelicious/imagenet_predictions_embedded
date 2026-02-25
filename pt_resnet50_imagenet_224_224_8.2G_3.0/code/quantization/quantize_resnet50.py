@@ -90,12 +90,8 @@ def pick_device(device_arg):
 
 
 def build_transform(model_name):
-    if model_name == "inceptionv3":
-        size = 299
-        resize = 299
-    else:
-        size = 224
-        resize = 256
+    size = 224
+    resize = 256
     return transforms.Compose(
         [
             transforms.Resize(resize),
